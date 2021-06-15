@@ -24,6 +24,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <glib.h>
 
 #include "log.h"
 #include "lib/raop.h"
@@ -272,6 +273,9 @@ int main(int argc, char *argv[]) {
 
     running = true;
     while (running) {
+#ifdef __APPLE__
+        g_main_context_iteration(g_main_context_default(), FALSE);
+#endif
         sleep(1);
     }
 
