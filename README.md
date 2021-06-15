@@ -56,9 +56,9 @@ make -j
 
 GCC 5 or later is required.
 
-# Building on desktop Linux:
+# Building on desktop:
 
-For building on desktop linux, follow these steps as per your distribution:
+For building on desktop, follow these steps as per your distribution:
 
 ## Ubuntu 18.04 or 20.04
 ```bash
@@ -76,6 +76,17 @@ make
 sudo dnf install cmake avahi-compat-libdns_sd-devel libplist-devel openssl-devel \
     gstreamer1-plugins-base-devel gstreamer1-libav gstreamer1-vaapi \
     gstreamer1-plugins-bad-free
+mkdir build
+cd build
+cmake ..
+make
+```
+
+## macOS 11
+```bash
+brew install cmake openssl libplist gstreamer gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav
+export LIBRARY_PATH="/usr/local/lib"
+export CPATH="/usr/local/include"
 mkdir build
 cd build
 cmake ..
